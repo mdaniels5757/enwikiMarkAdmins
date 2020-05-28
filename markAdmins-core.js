@@ -56,12 +56,14 @@ var markAdmins = mw.libs.markAdmins = {
 			'interface-admin': {
 				label: 'IA',
 				legacyName: 'intadmin',
-				legacyLabelId: 'iatxt'
+				legacyLabelId: 'iatxt',
+				enabled: true
 			},
 			'arbcom': {
 				label: 'ARB',
 				legacyName: 'arbcom',
-				legacyLabelId: 'arbtxt'
+				legacyLabelId: 'arbtxt',
+				enabled: true
 			}
 		},
 		runOn: ['Special', 'User', 'User_talk', 'Project', 'File', 'Help'],
