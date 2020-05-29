@@ -1,5 +1,6 @@
 import pywikibot
 import json
+from datetime import datetime, timezone
 
 site = pywikibot.Site('en', 'wikipedia');
 combinedJsonPage = pywikibot.Page(site, "User:MDanielsBot/markAdmins-Data.js")
@@ -73,5 +74,7 @@ outputJson = json.dumps(outputDict, sort_keys=True,\
 pageBottom = ");"
 
 newText = pageTop + outputJson + pageBottom;
-combinedJsonPage.put(newText, "Update markadmins data")
-#print(newText)
+if (newText != combinedJsonPage.get()):
+    combinedJsonPage.put(newText, "Update markadmins data")
+else:
+    print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S") + " -- No changes");
