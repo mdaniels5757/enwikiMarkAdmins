@@ -29,16 +29,10 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyLabelId: 'atxt',
 				enabled: true
 			},
-			'oversight': {
-				label: 'OS',
-				legacyName: 'oversight',
-				legacyLabelId: 'oversighttxt',
-				enabled: true
-			},
-			'checkuser': {
-				label: 'CU',
-				legacyName: 'checkuser',
-				legacyLabelId: 'checkusertxt',
+			'arbcom': {
+				label: 'ARB',
+				legacyName: 'arbcom',
+				legacyLabelId: 'arbtxt',
 				enabled: true
 			},
 			'bureaucrat': {
@@ -47,10 +41,10 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyLabelId: 'bureautxt',
 				enabled: true
 			},
-			'steward': {
-				label: 'S',
-				legacyName: 'steward',
-				legacyLabelId: 'stewtxt',
+			'checkuser': {
+				label: 'CU',
+				legacyName: 'checkuser',
+				legacyLabelId: 'checkusertxt',
 				enabled: true
 			},
 			'interface-admin': {
@@ -59,10 +53,16 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyLabelId: 'iatxt',
 				enabled: true
 			},
-			'arbcom': {
-				label: 'ARB',
-				legacyName: 'arbcom',
-				legacyLabelId: 'arbtxt',
+			'oversight': {
+				label: 'OS',
+				legacyName: 'oversight',
+				legacyLabelId: 'oversighttxt',
+				enabled: true
+			},
+			'steward': {
+				label: 'S',
+				legacyName: 'steward',
+				legacyLabelId: 'stewtxt',
 				enabled: true
 			},
 			'abusefilter': {
