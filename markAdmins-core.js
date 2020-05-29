@@ -131,6 +131,12 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyLabelId: 'tetxt',
 				enabled: false
 			},
+			'otrs-member': {
+				label: 'OTRS',
+				legacyName: 'otrs',
+				legacyLabelId: 'otrstxt',
+				enabled: false
+			},
 		},
 		runOn: ['Special', 'User', 'User_talk', 'Project', 'File', 'Help'],
 		runOnHistory: true,

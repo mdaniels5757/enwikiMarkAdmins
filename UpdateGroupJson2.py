@@ -11,6 +11,29 @@ def globalallusers(site,group):
         agugen.request['agugroup'] = group
     return agugen
 
+def sortkeys(key):
+    sortkeyDict = {
+        "sysop" : "A",
+        "arbcom" : "ARB",
+        "bureaucrat" : "B",
+        "checkuser" : "CU",
+        "oversight" : "OS",
+        "interface-admin" : "IA",
+        "abusefilter" : "EFM",
+        "abusefilter-helper" : "EFH",
+        "accountcreator" : "ACC",
+        "autoreviewer" : "AP",
+        "extendedmover" : "PM",
+        "filemover" : "FM",
+        "massmessage-sender" : "MMS",
+        "patroller" : "NPR",
+        "reviewer" : "PCR",
+        "rollbacker" : "RB",
+        "templateeditor" : "TE",
+        "otrs-member" : "OTRS",
+        "steward" : "S"
+    }
+    return sortkeyDict[key]
 
 combinedJsDataPage = pywikibot.Page(site,
                          "User:MDanielsBot/markAdmins-Data.js")
@@ -26,7 +49,8 @@ localGroups = ["abusefilter", "abusefilter-helper", "accountcreator",\
           "interface-admin", "massmessage-sender", "oversight",\
           "sysop", "templateeditor"]
 globalGroups = ["otrs-member" , "steward"]
-arbcom_members = json.loads(pywikibot.Page(site, "User:Amorymeltzer/crathighlighter.js/arbcom.json").get())
+arbcomJson = pywikibot.Page(site, "User:Amorymeltzer/crathighlighter.js/arbcom.json").get()
+arbcom_members = json.loads(arbcomJson)
 
 outputDict = {}
 
@@ -56,6 +80,10 @@ for user in arbcom_members:
 print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f") +\
       " -- Computing output...", flush=True)
 
+# Sort our flags
+for item in outputDict:
+    outputDict[item].sort(key=sortkeys)
+
 # Construct combined JSON page
 pageTop = "mw.hook('userjs.script-loaded.markadmins').fire("
 outputJson = json.dumps(outputDict, sort_keys=True,\
@@ -63,10 +91,12 @@ outputJson = json.dumps(outputDict, sort_keys=True,\
 pageBottom = ");"
 
 newText = pageTop + outputJson + pageBottom;
+oldpage = combinedJsDataPage.get()
 
-if (newText != combinedJsDataPage.get()):
-    combinedJsDataPage.put(newText, "Update markadmins data")
-    combinedJsonDataPage.put(outputJson, "Update markadmins data")
+combinedJsDataPage.put(newText, "Update markadmins data")
+combinedJsonDataPage.put(outputJson, "Update markadmins data")
+    
+if (newText != oldpage):
     print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f")\
              + " -- Updated!", flush=True)
 else:
