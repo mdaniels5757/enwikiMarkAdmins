@@ -17,7 +17,7 @@ def sortkeys(key):
         "arbcom" : "ARB",
         "bureaucrat" : "B",
         "checkuser" : "CU",
-        "oversight" : "OS",
+        "oversight" : "CV",
         "interface-admin" : "IA",
         "abusefilter" : "EFM",
         "abusefilter-helper" : "EFH",
