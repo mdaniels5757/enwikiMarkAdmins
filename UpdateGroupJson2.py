@@ -48,6 +48,7 @@ localGroups = ["abusefilter", "abusefilter-helper", "accountcreator",\
           "bureaucrat", "checkuser", "extendedmover", "filemover",\
           "interface-admin", "massmessage-sender", "oversight",\
           "sysop", "templateeditor"]
+extraLocalGroups = ["autoreviewer", "patroller", "reviewer", "rollbacker"]
 globalGroups = ["otrs-member" , "steward"]
 arbcomJson = pywikibot.Page(site, "User:Amorymeltzer/crathighlighter.js/arbcom.json").get()
 arbcom_members = json.loads(arbcomJson)
@@ -76,6 +77,12 @@ for user in arbcom_members:
         outputDict[user].append("arbcom")
     else:
         outputDict[user] = ["arbcom"]
+
+# Only add users in extraLocalGroups if they are in another group already
+for group in extraLocalGroups:
+    for user in site.allusers(group=group):
+        if user['name'] in outputDict.keys():
+            outputDict[user['name']].append(group)
 
 print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f") +\
       " -- Computing output...", flush=True)
