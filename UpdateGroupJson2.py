@@ -91,14 +91,14 @@ outputJson = json.dumps(outputDict, sort_keys=True,\
 pageBottom = ");"
 
 newText = pageTop + outputJson + pageBottom;
-oldpage = combinedJsDataPage.get()
-
-combinedJsDataPage.put(newText, "Update markadmins data")
-combinedJsonDataPage.put(outputJson, "Update markadmins data")
+oldJspage = combinedJsDataPage.get()
+oldJsonpage = combinedJsonDataPage.get()
     
-if (newText != oldpage):
+if (newText != oldJspage or outputJson != oldJsonpage):
     print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f")\
              + " -- Updated!", flush=True)
+    combinedJsDataPage.put(newText, "Update markadmins data")
+    combinedJsonDataPage.put(outputJson, "Update markadmins data")
 else:
     print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f")\
              + " -- No changes", flush=True);
