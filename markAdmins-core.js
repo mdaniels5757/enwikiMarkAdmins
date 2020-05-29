@@ -64,7 +64,73 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyName: 'arbcom',
 				legacyLabelId: 'arbtxt',
 				enabled: true
-			}
+			},
+			'abusefilter': {
+				label: 'EFM',
+				legacyName: 'efm',
+				legacyLabelId: 'efmtxt',
+				enabled: false
+			},
+			'abusefilter-helper': {
+				label: 'EFH',
+				legacyName: 'efh',
+				legacyLabelId: 'efhtxt',
+				enabled: false
+			},
+			'accountcreator': {
+				label: 'ACC',
+				legacyName: 'acc',
+				legacyLabelId: 'acctxt',
+				enabled: false
+			},
+			'autoreviewer': {
+				label: 'AP',
+				legacyName: 'ap',
+				legacyLabelId: 'aptxt',
+				enabled: false
+			},
+			'extendedmover': {
+				label: 'PM',
+				legacyName: 'pm',
+				legacyLabelId: 'pmtxt',
+				enabled: false
+			},
+			'filemover': {
+				label: 'FM',
+				legacyName: 'fm',
+				legacyLabelId: 'fmtxt',
+				enabled: false
+			},
+			'massmessage-sender': {
+				label: 'MMS',
+				legacyName: 'mms',
+				legacyLabelId: 'mmstxt',
+				enabled: false
+			},
+			'patroller': {
+				label: 'NPR',
+				legacyName: 'npr',
+				legacyLabelId: 'nprtxt',
+				enabled: false
+			},
+			'reviewer': {
+				label: 'PCR',
+				legacyName: 'pcr',
+				legacyLabelId: 'pcrtxt',
+				enabled: false
+			},
+			'rollbacker': {
+				label: 'RB',
+				legacyName: 'rb',
+				legacyLabelId: 'rbtxt',
+				enabled: false
+			},
+			'templateeditor': {
+				label: 'TE',
+				legacyName: 'te',
+				legacyLabelId: 'tetxt',
+				enabled: false
+			},
 		},
 		runOn: ['Special', 'User', 'User_talk', 'Project', 'File', 'Help'],
 		runOnHistory: true,
