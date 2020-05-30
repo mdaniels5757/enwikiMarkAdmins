@@ -243,7 +243,7 @@ var markAdmins = mw.libs.markAdmins = {
 			
 			user = decodeURIComponent(user);
 			// Two consecutive links to the same user? Don't mark followups!
-			previousUser = previousUser === user && !!m[1]; // isUsertalkLink
+			previousUser = previousUser === user //&& !!m[1]; // isUsertalkLink
 			if (previousUser) continue; // only once
 
 			userM = marker[user];
