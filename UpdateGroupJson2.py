@@ -83,6 +83,8 @@ for group in extraLocalGroups:
     for user in site.allusers(group=group):
         if user['name'] in outputDict.keys():
             outputDict[user['name']].append(group)
+        else:
+            outputDict[user['name']] = [group]
 
 print(datetime.now(timezone.utc).strftime("%b %d %Y %H:%M:%S.%f") +\
       " -- Computing output...", flush=True)
