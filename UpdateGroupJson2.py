@@ -3,6 +3,7 @@ import json
 from datetime import datetime, timezone
 
 site = pywikibot.Site('en', 'wikipedia');
+metawiki = pywikibot.Site('meta', 'meta');
 
 def globalallusers(site,group):
     agugen = pywikibot.data.api.ListGenerator('globalallusers',\
@@ -29,6 +30,8 @@ def sortkeys(key):
         "patroller" : "NPR",
         "reviewer" : "PCR",
         "rollbacker" : "RB",
+        "global-renamer" : "GRe",
+        "global-rollbacker" : "GRb",
         "templateeditor" : "TE",
         "otrs-member" : "OTRS",
         "steward" : "S"
@@ -49,7 +52,8 @@ localGroups = ["abusefilter", "abusefilter-helper", "accountcreator",\
           "interface-admin", "massmessage-sender", "oversight",\
           "sysop", "templateeditor"]
 extraLocalGroups = ["autoreviewer", "patroller", "reviewer", "rollbacker"]
-globalGroups = ["otrs-member" , "steward"]
+globalGroups = ["otrs-member" , "steward", "global-rollbacker"]
+metaGroups = ["global-renamer"]
 arbcomJson = pywikibot.Page(site, "User:Amorymeltzer/crathighlighter.js/arbcom.json").get()
 arbcom_members = json.loads(arbcomJson)
 
@@ -78,9 +82,15 @@ for user in arbcom_members:
     else:
         outputDict[user] = ["arbcom"]
 
-# Only add users in extraLocalGroups if they are in another group already
 for group in extraLocalGroups:
     for user in site.allusers(group=group):
+        if user['name'] in outputDict.keys():
+            outputDict[user['name']].append(group)
+        else:
+            outputDict[user['name']] = [group]
+
+for group in metaGroups:
+    for user in metawiki.allusers(group=group):
         if user['name'] in outputDict.keys():
             outputDict[user['name']].append(group)
         else:

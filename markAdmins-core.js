@@ -120,7 +120,7 @@ var markAdmins = mw.libs.markAdmins = {
 				enabled: false
 			},
 			'rollbacker': {
-				label: 'RB',
+				label: 'Rb',
 				legacyName: 'rb',
 				legacyLabelId: 'rbtxt',
 				enabled: false
@@ -135,6 +135,18 @@ var markAdmins = mw.libs.markAdmins = {
 				label: 'OTRS',
 				legacyName: 'otrs',
 				legacyLabelId: 'otrstxt',
+				enabled: false
+			},
+			'global-renamer': {
+				label: 'GRe',
+				legacyName: 'gre',
+				legacyLabelId: 'gretxt',
+				enabled: false
+			},
+			'global-rollbacker': {
+				label: 'GRb',
+				legacyName: 'grb',
+				legacyLabelId: 'grbtxt',
 				enabled: false
 			},
 		},
