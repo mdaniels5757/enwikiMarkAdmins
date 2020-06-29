@@ -54,7 +54,7 @@ localGroups = ["abusefilter", "abusefilter-helper", "accountcreator",\
 extraLocalGroups = ["autoreviewer", "patroller", "reviewer", "rollbacker"]
 globalGroups = ["otrs-member" , "steward", "global-rollbacker"]
 metaGroups = ["global-renamer"]
-arbcomJson = pywikibot.Page(site, "User:Amorymeltzer/crathighlighter.js/arbcom.json").get()
+arbcomJson = pywikibot.Page(site, "User:AmoryBot/crathighlighter.js/arbcom.json").get()
 arbcom_members = json.loads(arbcomJson)
 
 outputDict = {}
