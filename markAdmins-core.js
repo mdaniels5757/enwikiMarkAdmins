@@ -1,16 +1,19 @@
 /**
-*  Flag administrators and special user group members with a letter
-*  in parenthesis behind links that go into their user namespace.
-*  E.g. Didym -> Didym (A)
-*  @OrigDocumentation: https://commons.wikimedia.org/wiki/MediaWiki_talk:Gadget-markAdmins.js
-*  @Documentation https://en.wikipedia.org/wiki/User:Mdaniels5757/markAdmins
+* Flag administrators and special user group members with a letter
+* in parenthesis behind links that go into their user namespace.
+* E.g. Didym -> Didym (A)
 *
-*  @rev 3 (14:14, 20 August 2019 (UTC))
-*  @author Euku - 2005, PDD, Littl, Guandalug
-*  @author Didym - 2014
-*  @author Rillke <https://blog.rillke.com> - 2014
-*  @contributor Perhelion - 2017
-*  @migrator Mdaniels5757 - 2020
+* @see [Current Documentation]{@link https://en.wikipedia.org/wiki/User:Mdaniels5757/markAdmins}
+* @see [Original Documentation]{@link https://commons.wikimedia.org/wiki/MediaWiki_talk:Gadget-markAdmins.js}
+*
+* @version 1.4.1 (16 June 2020)
+* @license CC-BY-SA-3.0
+*
+* @author Euku - 2005, PDD, Littl, Guandalug
+* @author Didym - 2014
+* @author Rillke <https://blog.rillke.com> - 2014
+* @author Perhelion - 2017
+* @author Mdaniels5757 - 2020 - Migrator & enwiki maintainer
 */
 // <nowiki>
 /* eslint indent:["error","tab",{"outerIIFEBody":0}] */
