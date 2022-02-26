@@ -56,7 +56,7 @@ var markAdmins = mw.libs.markAdmins = {
 				legacyLabelId: 'iatxt',
 				enabled: true
 			},
-			'oversight': {
+			'suppress': {
 				label: 'OS',
 				legacyName: 'oversight',
 				legacyLabelId: 'oversighttxt',
